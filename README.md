@@ -75,7 +75,11 @@ claude mcp add --transport http workoutx https://api.workoutxapp.com/mcp --heade
 }
 ```
 
-### Claude Desktop and other stdio-only clients
+### Claude Desktop (one click)
+
+Download [`workoutx.mcpb`](https://workoutxapp.com/workoutx.mcpb) (also on the [releases page](https://github.com/furkanuruk/workoutx-mcp/releases)) and open it. Claude Desktop installs the extension and asks for your API key.
+
+### Claude Desktop (manual) and other stdio-only clients
 
 This package bridges stdio to the hosted endpoint:
 

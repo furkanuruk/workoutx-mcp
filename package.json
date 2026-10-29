@@ -19,7 +19,8 @@
     "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
     "smoke": "node test/smoke.mjs",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "build:mcpb": "esbuild src/index.ts --bundle --platform=node --target=node18 --format=cjs --outfile=mcpb/server/index.js && mcpb pack mcpb workoutx.mcpb"
   },
   "keywords": [
     "mcp",

@@ -1,0 +1,139 @@
+{
+  "manifest_version": "0.3",
+  "name": "workoutx",
+  "display_name": "WorkoutX Exercise API",
+  "version": "2.1.0",
+  "description": "1,900+ exercises with 720p video, a workout and program generator, supplements, and developer tools for building fitness apps.",
+  "long_description": "Connects Claude to the hosted WorkoutX MCP server (https://api.workoutxapp.com/mcp): search exercises with video, find alternatives, estimate calories, generate workouts and multi-week programs, look up supplements, and use developer tools for typed models, code examples, request debugging and usage stats. Every tool call counts as one request on your WorkoutX plan. Free key (500 requests, no card): https://workoutxapp.com/dashboard.html",
+  "author": {
+    "name": "WorkoutX",
+    "email": "support@workoutxapp.com",
+    "url": "https://workoutxapp.com"
+  },
+  "homepage": "https://workoutxapp.com/mcp.html",
+  "documentation": "https://workoutxapp.com/mcp.html",
+  "support": "https://github.com/furkanuruk/workoutx-mcp/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/furkanuruk/workoutx-mcp"
+  },
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "WORKOUTX_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "WorkoutX API key",
+      "description": "Starts with wx_. Get a free key at https://workoutxapp.com/dashboard.html",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "tools": [
+    {
+      "name": "get_endpoint_reference",
+      "description": "Parameters, response shape and curl example for any v2 endpoint."
+    },
+    {
+      "name": "generate_types",
+      "description": "TypeScript, Swift, Kotlin or Dart models for v2 responses."
+    },
+    {
+      "name": "get_code_example",
+      "description": "Snippets for React Native, Swift, Flutter, Next.js, Node and Python."
+    },
+    {
+      "name": "diagnose_request",
+      "description": "Explains a failing request and how to fix it; never sends it."
+    },
+    {
+      "name": "get_usage_stats",
+      "description": "Your requests, errors, latency, top endpoints, quota and media limits."
+    },
+    {
+      "name": "export_exercise_seed",
+      "description": "Exercise ids, names, muscles and equipment as JSON or CSV, without media."
+    },
+    {
+      "name": "get_trending_exercises",
+      "description": "Most requested exercises and filters across WorkoutX apps, anonymised."
+    },
+    {
+      "name": "search_exercises",
+      "description": "Search and filter 1,900+ exercises with signed MP4 links."
+    },
+    {
+      "name": "get_exercise",
+      "description": "One exercise: instructions, tips, muscles, calories, media."
+    },
+    {
+      "name": "get_exercise_media",
+      "description": "Fresh signed MP4 and thumbnail links."
+    },
+    {
+      "name": "list_exercise_filters",
+      "description": "Valid body parts, targets, equipment, categories, muscles."
+    },
+    {
+      "name": "find_exercise_alternatives",
+      "description": "Swaps for the same muscles, optionally by equipment."
+    },
+    {
+      "name": "find_similar_exercises",
+      "description": "Most similar exercises, ranked."
+    },
+    {
+      "name": "estimate_calories",
+      "description": "Calories from body weight and duration."
+    },
+    {
+      "name": "map_v1_exercise",
+      "description": "v1 exercise id to v2 exercise."
+    },
+    {
+      "name": "generate_workout",
+      "description": "One full session with warm-up, sets, reps, rest and cool-down."
+    },
+    {
+      "name": "generate_program",
+      "description": "Multi-week program with periodisation and deloads."
+    },
+    {
+      "name": "search_supplements",
+      "description": "Supplements with evidence, dosage and timing."
+    },
+    {
+      "name": "get_supplement_stack",
+      "description": "Recommended supplement stack for a goal."
+    },
+    {
+      "name": "check_api_key",
+      "description": "Plan and remaining quota."
+    }
+  ],
+  "keywords": [
+    "fitness",
+    "exercise",
+    "workout",
+    "gym",
+    "api",
+    "mcp"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
