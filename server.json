@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.furkanuruk/workoutx",
+  "title": "WorkoutX Exercise API",
+  "description": "1,900+ exercises with video, workout generator, supplements, and dev tools (types, snippets, debugging).",
+  "websiteUrl": "https://workoutxapp.com/mcp.html",
+  "version": "2.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.workoutxapp.com/mcp",
+      "headers": [
+        {
+          "name": "X-WorkoutX-Key",
+          "description": "WorkoutX API key (free at https://workoutxapp.com/dashboard.html)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "workoutx-mcp",
+      "version": "2.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "WORKOUTX_API_KEY",
+          "description": "WorkoutX API key (free at https://workoutxapp.com/dashboard.html)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/furkanuruk/workoutx-mcp",
+    "source": "github"
+  }
+}

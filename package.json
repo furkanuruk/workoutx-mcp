@@ -1,0 +1,62 @@
+{
+  "name": "workoutx-mcp",
+  "version": "2.1.0",
+  "description": "Exercise & fitness MCP server for Claude, Cursor, ChatGPT and Grok: 1,900+ exercises with video, workout and program generator, supplements, plus developer tools (typed models, code examples, request debugging, usage stats). Bridges stdio clients to https://api.workoutxapp.com/mcp.",
+  "type": "module",
+  "bin": {
+    "workoutx-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "smoke": "node test/smoke.mjs",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "exercise-api",
+    "fitness-api",
+    "workout-api",
+    "exercise-database",
+    "workout-generator",
+    "fitness",
+    "gym",
+    "claude",
+    "claude-code",
+    "cursor",
+    "chatgpt",
+    "grok",
+    "ai-agents",
+    "workoutx"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  },
+  "mcpName": "io.github.furkanuruk/workoutx",
+  "homepage": "https://workoutxapp.com/mcp.html",
+  "author": "WorkoutX <business@workoutxapp.com> (https://workoutxapp.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkanuruk/workoutx-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/furkanuruk/workoutx-mcp/issues"
+  }
+}
